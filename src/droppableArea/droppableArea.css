@@ -1,0 +1,52 @@
+.area {
+  flex: 0 0 200px;
+  background-color: transparent; /* Set background color to transparent */
+  padding: 15px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+.box {
+  flex: 1;
+  height: 50px;
+  background-color: transparent; /* Set background color to transparent */
+  border: 1px solid #5C5470;
+  padding: 10px;
+  margin-right: 10px;
+  text-align: center;
+  border-radius: 8px; /* Optional: Add rounded corners */
+  
+}
+
+.dropped-item {
+  background-color: #5C5470;
+  color: white;
+  padding: 10px;
+  border: 1px solid #5C5470;
+  text-align: center;
+  height: 30px;
+  width: 115px;
+  border-radius: 8px;
+}
+
+.droppable-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+}
+
+.scrollable-container {
+  width: 100%;
+  height: 135px;
+  overflow-x: auto; /* Use overflow-x to control horizontal scrolling */
+  overflow-y: hidden;
+
+  background-color: #352F44;
+}
+
+.scrollable-content {
+  display: flex;
+  white-space: nowrap;
+}

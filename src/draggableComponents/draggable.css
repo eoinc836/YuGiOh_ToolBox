@@ -1,0 +1,134 @@
+#inputType{
+  width: 40px;
+  margin-left: 5px;
+}
+
+
+.draggable-item {
+  width: 140px;
+  height: 110px;
+  padding: 10px;
+  border: 2px solid #333;
+  text-align: center;
+  cursor: grab;
+  box-sizing: border-box;
+  background-color: #B9B4C7;
+  color: #FAF0E6;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.draggable-element:hover {
+  transform: scale(1.05);
+  background-color: #ddd;
+  border-color: #555;
+}
+
+
+.draggable-operator {
+  width: 100px; /* Set your desired width */
+  height: 73px;
+  background-color: #B9B4C7;
+  padding: 20px;
+  border: 2px solid #120000;
+  text-align: center;
+  cursor: grab;
+  box-sizing: border-box; 
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.draggable-item:active {
+    cursor: grabbing;
+  }
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.draggable-item:hover {
+  transform: scale(1.05); /* Scale the element on hover */
+  /* Add other styles for hover effect */
+}
+
+.draggable-operator:hover {
+  transform: scale(1.05); /* Scale the element on hover */
+  /* Add other styles for hover effect */
+}
+
+#plusButton{
+  position: relative;
+  width: 45%;
+  height: auto;
+
+}
+
+.info-span{
+  display: block;
+}
+
+.info-section{
+  position: relative;
+}
+
+
+.item-header {
+  display: flex;
+  align-items: center; 
+}
+
+
+
+#plusButton{
+  height:15px;
+  width: auto;
+}
+
+.custom-dropdown {
+  width: 100%; /* Set the width to 100% to match the parent (draggable item) */
+  padding: 4px 8px; /* Adjust padding */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff; /* Dropdown background color */
+  color: #333; /* Dropdown text color */
+  font-size: 12px; /* Font size of the dropdown text */
+  cursor: pointer;
+}
+
+.custom-dropdown:hover {
+  border-color: #555; /* Border color on hover */
+}
+
+.custom-dropdown::after {
+  content: '\25BC'; /* Unicode character for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 14px; /* Font size of the dropdown arrow */
+  color: #555; /* Arrow color */
+}
+
+.custom-dropdown:hover::after {
+  color: #333; /* Arrow color on hover */
+}
+
+.custom-dropdown option {
+  background-color: #fff; /* Background color of dropdown items */
+  color: #333; /* Text color of dropdown items */
+}
+
+.custom-dropdown option:hover {
+  background-color: #f8f9fa; /* Background color of dropdown items on hover */
+}
+
+.small-text-box {
+  width: 100px; /* Adjust the width as per your requirements */
+  height: 15px; /* Adjust the height as per your requirements */
+}
