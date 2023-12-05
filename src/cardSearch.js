@@ -139,6 +139,7 @@ function addAllCards(cardBase) {
                     let lvl = newCard['level'];
                     let card = new Card(name, cardType, cardSubTypes, desc, image, {
                         attack: attack,
+                        defence:defence,
                         attr: attr,  // Make sure to include 'attr' in the options object
                         monsterType: monsterType,
                         scale: scale,
@@ -163,9 +164,11 @@ function search_database(cardBase, criteria, equals = null) {
     let result_set = [];
     for (let card of cardBase.cards) {
         if (evaluate_criteria(card, criteria, equals)) {
-            result_set.push([card.name, card.image, card.desc]);
+            console.log(card.defence)
+            result_set.push([card.name, card.image, card.desc, card.cardType, card.attack, card.defence, card.cardSubTypes]);
         }
     }
+    
     return result_set.sort();
 }
 
@@ -311,6 +314,19 @@ function precedence(operator) {
 }
 
 
+export function returnCardNames(){
+    let names = []
+    for (let card of cardbase.cards)
+    if (card.cardType == 'Monster'){
+        if (card.cardSubTypes[0].includes('Link') ||card. cardSubTypes[0].includes('XYZ') || card.cardSubTypes[0].includes('Fusion') || card.cardSubTypes[0].includes('Synchro')){
+            //pass
+        }
+        else{
+            names.push(card.name)
+        }
+    }
+    return(names)
+}
 
 
 export function performSearch(boxItems){
@@ -319,4 +335,9 @@ export function performSearch(boxItems){
     
     return results
     
+}
+
+export function returnImage(cardName){
+    const correctCard = cardbase.cards.find(obj => obj.name === cardName);
+    return(correctCard.image)
 }

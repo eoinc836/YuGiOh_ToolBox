@@ -1,0 +1,29 @@
+/* smallWorldWindow.css */
+
+.windowContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh; /* 100% of the viewport height */
+  }
+  
+  .cardWindow {
+    flex: 0 0 calc(33.33% - 100px); /* Calculate width to allow for margin */
+    height: 430px;
+    width: 295px;
+    margin-right: 100px; /* Margin between boxes */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    background-color: #474157;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Use 'inset' for an inner shadow */
+  border-radius: 0; 
+    
+  }
+  
+  .smallWorldImage{
+    width: 295px;
+    height: 390px;
+  }
+
+  .windowID{
+    margin-left: 100px;
+  }

@@ -13,7 +13,6 @@ const DraggableCardType = ({ increaseBoxes, boxItems, setBoxItems }) => {
       };
       setBoxItems([newItem]);
     } else {
-      console.log(boxItems[0].objectType)
       increaseBoxes();
       // If there are multiple droppable areas or non-empty droppable areas, add to the end
       const newItem = {

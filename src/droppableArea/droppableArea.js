@@ -62,7 +62,8 @@ const DroppableArea = ({ numberOfBoxes, boxItems, setBoxItems }) => {
             <div className="box" onDrop={(e) => handleDrop(e, index)}>
               {boxItems[index] && (
                 <div className="dropped-item">
-                {boxItems[index].value}
+              <p className='Value'>{boxItems[index].value}</p>
+              <p className='Type'>({boxItems[index].objectType})</p>
                 </div>
               )}
             </div>

@@ -1,50 +1,57 @@
 .area {
-  flex: 0 0 200px;
-  background-color: transparent; /* Set background color to transparent */
-  padding: 15px;
+  flex: 0 0 100px;
   box-sizing: border-box;
   white-space: nowrap;
   overflow: hidden;
-  border-radius: 8px; /* Optional: Add rounded corners */
 }
 
 .box {
   flex: 1;
-  height: 50px;
   background-color: transparent; /* Set background color to transparent */
-  border: 1px solid #5C5470;
-  padding: 10px;
-  margin-right: 10px;
   text-align: center;
-  border-radius: 8px; /* Optional: Add rounded corners */
-  
 }
 
 .dropped-item {
-  background-color: #5C5470;
-  color: white;
-  padding: 10px;
-  border: 1px solid #5C5470;
-  text-align: center;
-  height: 30px;
-  width: 115px;
-  border-radius: 8px;
+  border-radius: 0; 
+  background-color: #55379c; /* Set your desired bright color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+  z-index: 1;
+  font-size: 10px;
+  height: 45px;
+  width: 88px;
+}
+
+.Value{
+  font:  15px arial, sans-serif;
+  text-shadow:-1px 6px 58px #ffffff;
+  color:#ffffff;
+  
+}
+
+.Type{
+  color:white;
+  font-weight: bold;
+  font-size: 8px;
+  text-shadow: rgba(255,255,255,1) 0px 0px 5px;
 }
 
 .droppable-container {
   display: flex;
   overflow-x: auto;
-  gap: 20px;
 }
 
 .scrollable-container {
   width: 100%;
-  height: 135px;
+  height: 70px;
   overflow-x: auto; /* Use overflow-x to control horizontal scrolling */
   overflow-y: hidden;
-
-  background-color: #352F44;
+  background-color: #474157;
+  margin-bottom: -30px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Use 'inset' for an inner shadow */
+  border-radius: 0; /* Sharp corners */
 }
+
+
 
 .scrollable-content {
   display: flex;
