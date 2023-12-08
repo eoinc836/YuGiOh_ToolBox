@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/YuGiOh_ToolBox/static/css/main.e46614ae.css",
-    "main.js": "/YuGiOh_ToolBox/static/js/main.2452f49d.js",
-    "static/js/787.0b1abbe5.chunk.js": "/YuGiOh_ToolBox/static/js/787.0b1abbe5.chunk.js",
-    "static/media/magnifyingGlass.svg": "/YuGiOh_ToolBox/static/media/magnifyingGlass.5e3a1dbaa89a4189e5e097280b702c9a.svg",
-    "index.html": "/YuGiOh_ToolBox/index.html",
-    "main.e46614ae.css.map": "/YuGiOh_ToolBox/static/css/main.e46614ae.css.map",
-    "main.2452f49d.js.map": "/YuGiOh_ToolBox/static/js/main.2452f49d.js.map",
-    "787.0b1abbe5.chunk.js.map": "/YuGiOh_ToolBox/static/js/787.0b1abbe5.chunk.js.map"
+    "main.css": "/eoinc836.github.io/static/css/main.e46614ae.css",
+    "main.js": "/eoinc836.github.io/static/js/main.0615bf8c.js",
+    "static/js/787.0b1abbe5.chunk.js": "/eoinc836.github.io/static/js/787.0b1abbe5.chunk.js",
+    "index.html": "/eoinc836.github.io/index.html",
+    "static/media/magnifyingGlass.svg": "/eoinc836.github.io/static/media/magnifyingGlass.5e3a1dbaa89a4189e5e097280b702c9a.svg",
+    "main.e46614ae.css.map": "/eoinc836.github.io/static/css/main.e46614ae.css.map",
+    "main.0615bf8c.js.map": "/eoinc836.github.io/static/js/main.0615bf8c.js.map",
+    "787.0b1abbe5.chunk.js.map": "/eoinc836.github.io/static/js/787.0b1abbe5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e46614ae.css",
-    "static/js/main.2452f49d.js"
+    "static/js/main.0615bf8c.js"
   ]
 }
