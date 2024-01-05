@@ -6,11 +6,11 @@ import './NavBar.css'; // Import the CSS file for styling
 const NavBar = () => {
   return (
     <nav className="navbar">
-      <div className="navbar-column">
+      {/* <div className="navbar-column">
         <ul>
           <li><Link to="/SmallWorld">SmallWorld</Link></li>
         </ul>
-      </div>
+      </div> */}
       <div className="navbar-column">
         <ul>
           <li>

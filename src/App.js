@@ -13,6 +13,7 @@ function App() {
             </div>
             <Routes>
                 <Route exact path="/" element={<Search />} />
+                {/* <Route path="/SmallWorld" element={<SmallWorld />} /> */}
             </Routes>
         </Router>
         </div>
