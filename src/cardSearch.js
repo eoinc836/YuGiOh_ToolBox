@@ -155,16 +155,17 @@ function addAllCards(cardBase) {
 }
 
 function handleAtkDefSearch(cardValue, searchRange) {
-    let minValue = searchRange.split('<')[0].trim('=');
-    let maxValue = searchRange.split('<').pop().trim('=');
-    return parseInt(minValue) <= cardValue && cardValue <= parseInt(maxValue);
+    let parts = searchRange.split('<=');
+    let maxValue = parseInt(parts[parts.length - 1], 10);
+    let minValue = parseInt(parts[0], 10);
+    console.log("max",maxValue,"min",minValue)
+    return minValue <= cardValue && cardValue <= maxValue;
 }
 
 function search_database(cardBase, criteria, equals = null) {
     let result_set = [];
     for (let card of cardBase.cards) {
         if (evaluate_criteria(card, criteria, equals)) {
-            console.log(card.defence)
             result_set.push([card.name, card.image, card.desc, card.cardType, card.attack, card.defence, card.cardSubTypes]);
         }
     }
@@ -302,7 +303,7 @@ function convert_to_criteria(search_conditions) {
             'right': right
         });
     }
-
+    console.log(stack[0],'stack')
     return stack[0];
 }
 

@@ -43,7 +43,7 @@ const Search = () => {
 
 
   const startSearch = async () => {
-     
+    console.log(boxItems)
     try {
       let results = await performSearch(boxItems);
       setReturnedCards(results);
