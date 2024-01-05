@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import PlusButton from '../additionalDragComponents/addArrow';
-const DraggableDefValue = ({ increaseBoxes, boxItems, setBoxItems }) => {
 
+
+const DraggableDefValue = ({ increaseBoxes, boxItems, setBoxItems }) => {
   const [selectedValues, setSelectedValues] = useState({});
-  
+  const [minValue, setMinValue] = useState(0);
+  const [maxValue, setMaxValue] = useState(0);
+
+
   const onClick = () => {
     
     
@@ -37,8 +41,6 @@ const DraggableDefValue = ({ increaseBoxes, boxItems, setBoxItems }) => {
     e.dataTransfer.setData('application/json', JSON.stringify(selectedValues));
   };
   
-  const [minValue, setMinValue] = useState(0);
-  const [maxValue, setMaxValue] = useState(0);
 
   const handleMinChange = (e) => {
     const newValue = e.target.value;

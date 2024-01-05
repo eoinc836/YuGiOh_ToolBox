@@ -44,7 +44,8 @@ const DraggableScale = ({ increaseBoxes, boxItems, setBoxItems }) => {
   }
 
   const jsonData = {'filter':'scale',
-                    'value':clickedNumbers}
+                    'value':`${clickedNumbers}`,
+                    equals: false}
 
   const handleDragStart = (e) => {
 

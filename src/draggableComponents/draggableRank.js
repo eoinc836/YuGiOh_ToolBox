@@ -44,7 +44,8 @@ const DraggableRank = ({ increaseBoxes, boxItems, setBoxItems }) => {
   }
 
   const jsonData = {'filter':'rank',
-                    'value':clickedNumbers}
+                    'value':`${clickedNumbers}`,
+                    equals: false}
 
   const handleDragStart = (e) => {
 

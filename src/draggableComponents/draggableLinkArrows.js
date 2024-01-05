@@ -22,7 +22,7 @@ const DraggableLinkArrows = ({ increaseBoxes, boxItems, setBoxItems }) => {
     if (boxItems.length === 1 && !boxItems[0].objectType) {
       const newItem = {
         objectType: 'linkMarkers',
-        'value': `${clickedArrows}`,
+        'value': clickedArrows,
         equals: false
       };
       setBoxItems([newItem]);
@@ -31,7 +31,7 @@ const DraggableLinkArrows = ({ increaseBoxes, boxItems, setBoxItems }) => {
       // If there are multiple droppable areas or non-empty droppable areas, add to the end
       const newItem = {
         objectType: 'linkMarkers',
-        'value': `${clickedArrows}`,
+        'value': clickedArrows,
         equals: false
       };
 

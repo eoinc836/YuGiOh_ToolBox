@@ -44,7 +44,8 @@ const DraggableLinkRating = ({ increaseBoxes, boxItems, setBoxItems }) => {
   }
 
   const jsonData = {'filter':'linkRating',
-                    'value':clickedNumbers}
+                    'value':`${clickedNumbers}`,
+                    equals: false}
 
   const handleDragStart = (e) => {
 

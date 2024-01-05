@@ -40,7 +40,7 @@ const DraggableLevel = ({ increaseBoxes, boxItems, setBoxItems }) => {
 
   }
   const jsonData = {'filter':'lvl',
-                    'value':clickedNumbers,
+                    'value':`${clickedNumbers}`,
                     equals: false}
 
   const handleDragStart = (e) => {

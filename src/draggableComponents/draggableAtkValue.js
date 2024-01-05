@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PlusButton from '../additionalDragComponents/addArrow';
-import './draggable.css';
+
 
 const DraggableAtkValue = ({ increaseBoxes, boxItems, setBoxItems }) => {
   const [selectedValues, setSelectedValues] = useState({});
@@ -50,24 +50,39 @@ const DraggableAtkValue = ({ increaseBoxes, boxItems, setBoxItems }) => {
     const newValue = e.target.value;
     setMaxValue(newValue);
     setSelectedValues({
-      objectType: 'AtkValue',
-      value: `${minValue}<=ATK<=${newValue}`,
+      'filter': 'AtkValue',
+      'value': `${minValue}<=ATK<=${newValue}`,
       
     });
   };
 
   return (
     <div className="draggable-item">
-      <div className="item-header">Attack
-      <PlusButton id='plusButton' onClickFunction={onClick}/>
+      <div
+        draggable
+        className="item-content"
+        onDragStart={handleDragStart}
+      >
+    <div className="item-header">Attack
+    <PlusButton id='plusButton' onClickFunction={onClick}/>
+    </div>
+   
+    Max:   
+    <input
+        type="number"
+        id="inputType"
+        onChange={handleMaxChange}
+        value={maxValue}
+      />
+    Min:   
+    <input
+        type="number"
+        id="inputType"
+        onChange={handleMinChange}
+        value={minValue}
+      />
       </div>
-      <div draggable className="item-content" onDragStart={handleDragStart}>
-        Max:
-        <input type="number" id="inputType" onChange={handleMaxChange} value={maxValue} />
-        <br />
-        Min:
-        <input type="number" id="inputType" onChange={handleMinChange} value={minValue} />
-      </div>
+        
     </div>
   );
 };
