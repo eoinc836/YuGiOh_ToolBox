@@ -15,7 +15,7 @@ const DraggableMonsterSubType = ({ increaseBoxes, boxItems, setBoxItems }) => {
   
     if (boxItems.length === 1 && !boxItems[0].objectType) {
       const newItem = {
-        objectType: 'cardSubTypes',
+        objectType: 'monsterCardSubTypes',
         value: `${selectedOption}`,
         equals: false
       };
@@ -24,7 +24,7 @@ const DraggableMonsterSubType = ({ increaseBoxes, boxItems, setBoxItems }) => {
       increaseBoxes();
       // If there are multiple droppable areas or non-empty droppable areas, add to the end
       const newItem = {
-        objectType: 'cardSubTypes',
+        objectType: 'monsterCardSubTypes',
         value: `${selectedOption}`,
         equals: false
       };
@@ -47,7 +47,7 @@ const DraggableMonsterSubType = ({ increaseBoxes, boxItems, setBoxItems }) => {
 
   };
 
-  const jsonData = {'filter':'cardSubTypes',
+  const jsonData = {'filter':'monsterCardSubTypes',
                     'value':selectedOption}
   
 

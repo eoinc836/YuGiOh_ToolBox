@@ -17,7 +17,6 @@ class Card {
         this.cardSubTypes = cardSubTypes;
         this.desc = desc;
         this.image = image;
-    
         this.attack = options.attack !== undefined ? options.attack : null;
         this.defence = options.defence !== undefined ? options.defence : null;
         this.materials = options.materials !== undefined ? options.materials : null;
@@ -158,7 +157,6 @@ function handleAtkDefSearch(cardValue, searchRange) {
     let parts = searchRange.split('<=');
     let maxValue = parseInt(parts[parts.length - 1], 10);
     let minValue = parseInt(parts[0], 10);
-    console.log("max",maxValue,"min",minValue)
     return minValue <= cardValue && cardValue <= maxValue;
 }
 
@@ -226,14 +224,25 @@ function evaluate_criteria(obj, criteria, equals) {
             return arrowFound;
         }
 
-        if (attribute == 'cardSubTypes') {
-            let obj_value = obj[attribute];
+        if (attribute.includes('CardSubTypes')) {
+            let searchCardType = '' ;
+            if(attribute.includes('trap')){
+                searchCardType = 'Trap'
+            }
+            if(attribute.includes('spell')){
+                searchCardType = 'Spell'
+            }
+            if(attribute.includes('monster')){
+                searchCardType = 'Monster'
+            }
+            let obj_value = obj['cardSubTypes'];
+            let obj_cardType = obj['cardType']
             let subTypeFound = false;
             if (typeof obj_value == 'string') {
-                return obj_value == value;
+                return obj_value == value && searchCardType == obj_cardType;
             } else {
                 for (let subType of obj_value) {
-                    if (value == subType) {
+                    if (value == subType  && searchCardType == obj_cardType) {
                         subTypeFound = true;
                     }
                 }
