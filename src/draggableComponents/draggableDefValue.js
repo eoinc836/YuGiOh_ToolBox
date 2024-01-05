@@ -3,11 +3,11 @@ import PlusButton from '../additionalDragComponents/addArrow';
 
 
 const DraggableDefValue = ({ increaseBoxes, boxItems, setBoxItems }) => {
-  const [selectedValues, setSelectedValues] = useState({});
+  const [selectedValues, setSelectedValues] = useState({'filter':'DefValue',
+                                                        'value':`0<=DEF<=0`,
+                                                        equals: false});
   const [minValue, setMinValue] = useState(0);
   const [maxValue, setMaxValue] = useState(0);
-
-
   const onClick = () => {
     
     

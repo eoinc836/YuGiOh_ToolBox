@@ -31,11 +31,10 @@ class Card {
 }
 
 function addAllCards(cardBase) {
-    let j = 0;
     let i = 0;
     while (i < 12759) {
         let newCard = data['data'][i];
-        if (newCard['type'] == 'Spell Card') {
+        if (newCard['type'] === 'Spell Card') {
             let name = newCard['name'];
             let image = newCard['card_images'][0]['image_url'];
             let cardType = 'Spell';
@@ -43,7 +42,7 @@ function addAllCards(cardBase) {
             let desc = newCard['desc'];
             let card = new Card(name, cardType, cardSubTypes, desc, image);
             cardBase.addCard(card);
-        } else if (newCard['type'] == 'Trap Card') {
+        } else if (newCard['type'] === 'Trap Card') {
             let name = newCard['name'];
             let image = newCard['card_images'][0]['image_url'];
             let cardType = 'Trap';
@@ -71,13 +70,13 @@ function addAllCards(cardBase) {
                 let linkMarkersOriginal = newCard['linkmarkers'];
                 let linkMarkers = [];
                 for (let marker of linkMarkersOriginal) {
-                    if (marker == 'Top-Right') {
+                    if (marker === 'Top-Right') {
                         linkMarkers.push('TopRight');
-                    } else if (marker == 'Top-Left') {
+                    } else if (marker === 'Top-Left') {
                         linkMarkers.push('TopLeft');
-                    } else if (marker == 'Bottom-Left') {
+                    } else if (marker === 'Bottom-Left') {
                         linkMarkers.push('BottomLeft');
-                    } else if (marker == 'Bottom-Right') {
+                    } else if (marker === 'Bottom-Right') {
                         linkMarkers.push('BottomRight');
                     } else {
                         linkMarkers.push(marker);
@@ -173,15 +172,15 @@ function search_database(cardBase, criteria, equals = null) {
 
 function evaluate_criteria(obj, criteria, equals) {
     if ('operator' in criteria) {
-        if (criteria['operator'] == 'AND') {
+        if (criteria['operator'] === 'AND') {
             let left_result = evaluate_criteria(obj, criteria['left'] || {}, null);
             let right_result = evaluate_criteria(obj, criteria['right'] || {}, null);
             return left_result && right_result;
-        } else if (criteria['operator'] == 'OR') {
+        } else if (criteria['operator'] === 'OR') {
             let left_result = evaluate_criteria(obj, criteria['left'] || {}, null);
             let right_result = evaluate_criteria(obj, criteria['right'] || {}, null);
             return left_result || right_result;
-        } else if (criteria['operator'] == 'XOR') {
+        } else if (criteria['operator'] === 'XOR') {
             let left_result = evaluate_criteria(obj, criteria['left'] || {}, null);
             let right_result = evaluate_criteria(obj, criteria['right'] || {}, null);
             return left_result ^ right_result;
@@ -190,30 +189,30 @@ function evaluate_criteria(obj, criteria, equals) {
         let attribute = criteria['attribute'];
         let value = criteria['value'];
 
-        if (attribute == 'AtkValue' && obj.attack != null) {
+        if (attribute === 'AtkValue' && obj.attack != null) {
             return handleAtkDefSearch(obj.attack, value);
-        } else if (attribute == 'DefValue' && obj.defence != null) {
+        } else if (attribute === 'DefValue' && obj.defence != null) {
             return handleAtkDefSearch(obj.defence, value);
         }
 
-        if ((attribute == 'name' || attribute == 'desc' || attribute == 'materials') && obj[attribute] != null) {
-            if (equals == true) {
+        if ((attribute === 'name' || attribute === 'desc' || attribute === 'materials') && obj[attribute] != null) {
+            if (equals === true) {
                 let obj_value = obj[attribute];
-                return obj_value == value;
+                return obj_value === value;
             } else {
                 let obj_value = obj[attribute];
                 return obj_value.includes(value);
             }
         }
 
-        if (attribute == 'lvl' || attribute == 'scale' || attribute == 'rank' || attribute == 'linkRating') {
+        if (attribute === 'lvl' || attribute === 'scale' || attribute === 'rank' || attribute === 'linkRating') {
             let obj_value = obj[attribute];
             if (obj[attribute] != null) {
                 return value.includes(obj_value.toString());
             }
         }
 
-        if (attribute == 'linkMarkers' && obj[attribute] != null) {
+        if (attribute === 'linkMarkers' && obj[attribute] != null) {
             let obj_value = obj[attribute];
             let arrowFound = false;
             for (let arrow of value) {
@@ -238,11 +237,11 @@ function evaluate_criteria(obj, criteria, equals) {
             let obj_value = obj['cardSubTypes'];
             let obj_cardType = obj['cardType']
             let subTypeFound = false;
-            if (typeof obj_value == 'string') {
-                return obj_value == value && searchCardType == obj_cardType;
+            if (typeof obj_value === 'string') {
+                return obj_value === value && searchCardType === obj_cardType;
             } else {
                 for (let subType of obj_value) {
-                    if (value == subType  && searchCardType == obj_cardType) {
+                    if (value === subType  && searchCardType === obj_cardType) {
                         subTypeFound = true;
                     }
                 }
@@ -250,7 +249,7 @@ function evaluate_criteria(obj, criteria, equals) {
             return subTypeFound;
         } else if (attribute != null && obj.hasOwnProperty(attribute)) {
             let obj_value = obj[attribute];
-            return obj_value == value;
+            return obj_value === value;
         } else {
             return false;
         }
@@ -264,11 +263,11 @@ function convert_to_criteria(search_conditions) {
     let stack = [];
     let operator_stack = [];
     for (let condition of search_conditions) {
-        if (condition['objectType'] == 'operator') {
-            if (condition['value'] == '(') {
+        if (condition['objectType'] === 'operator') {
+            if (condition['value'] === '(') {
                 operator_stack.push('(');
-            } else if (condition['value'] == ')') {
-                while (operator_stack.length && operator_stack[operator_stack.length - 1] != '(') {
+            } else if (condition['value'] === ')') {
+                while (operator_stack.length && operator_stack[operator_stack.length - 1] !== '(') {
                     let operator = operator_stack.pop();
                     let right = stack.pop();
                     let left = stack.pop();
@@ -278,7 +277,7 @@ function convert_to_criteria(search_conditions) {
                         'right': right
                     });
                 }
-                if (operator_stack.length && operator_stack[operator_stack.length - 1] == '(') {
+                if (operator_stack.length && operator_stack[operator_stack.length - 1] === '(') {
                     operator_stack.pop();
                 }
             } else {
@@ -317,7 +316,7 @@ function convert_to_criteria(search_conditions) {
 }
 
 function precedence(operator) {
-    if (operator == 'AND' || operator == 'OR' || operator == 'XOR') {
+    if (operator === 'AND' || operator === 'OR' || operator === 'XOR') {
         return 1;
     }
     return 0;
@@ -327,8 +326,8 @@ function precedence(operator) {
 export function returnCardNames(){
     let names = []
     for (let card of cardbase.cards)
-    if (card.cardType == 'Monster'){
-        if (card.cardSubTypes[0].includes('Link') ||card. cardSubTypes[0].includes('XYZ') || card.cardSubTypes[0].includes('Fusion') || card.cardSubTypes[0].includes('Synchro')){
+    if (card.cardType === 'Monster'){
+        if (card.cardSubTypes[0].includes('Link') ||card.cardSubTypes[0].includes('XYZ') || card.cardSubTypes[0].includes('Fusion') || card.cardSubTypes[0].includes('Synchro')){
             //pass
         }
         else{

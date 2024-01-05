@@ -21,7 +21,6 @@ import DraggableLinkRating from './draggableComponents/draggableLinkRating';
 import DraggableLinkArrows from './draggableComponents/draggableLinkArrows';
 import { performSearch} from './cardSearch';
 const Search = () => {
-  const [loading, setLoading] = useState(false);
   const [numberOfBoxes, setNumberOfBoxes] = useState(0);
   const [boxItems, setBoxItems] = useState(Array(numberOfBoxes).fill({ objectType: '', value: '', equals: false }));
   const [returnedCards, setReturnedCards] = useState()

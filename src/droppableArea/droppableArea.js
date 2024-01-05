@@ -30,7 +30,7 @@ const DroppableArea = ({ numberOfBoxes, boxItems, setBoxItems }) => {
     var newItem = null
     // Update the target box state
     console.log(objectData,'obj')
-    if (objectData['filter'] == 'name' || objectData['filter'] == 'desc' || objectData['filter'] == 'materials'){
+    if (objectData['filter'] === 'name' || objectData['filter'] === 'desc' || objectData['filter'] === 'materials'){
       
       newItem = {
         objectType: objectData['filter'],

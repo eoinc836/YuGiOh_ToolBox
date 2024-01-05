@@ -17,7 +17,7 @@ const SmallWorldWindow = ({ Text }) => {
     <p className='windowID'>{Text}</p>
     <div className='cardWindow'>
     <SearchBar suggestions={cardNames} onSearch={handleSearch} />
-    <img className='smallWorldImage' src={cardImage}></img>
+    <img className='smallWorldImage' src={cardImage} alt='card face'></img>
     </div>
   </div>
   );

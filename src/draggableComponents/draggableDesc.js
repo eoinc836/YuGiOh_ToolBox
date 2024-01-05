@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import GreenPlusButton from '../additionalDragComponents/addArrow';
+
 
 const DraggableCardDesc = ({ increaseBoxes, boxItems, setBoxItems }) => {
   const [selectedDesc, setSelectedDesc] = useState('');

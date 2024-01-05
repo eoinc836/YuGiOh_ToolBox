@@ -3,7 +3,9 @@ import PlusButton from '../additionalDragComponents/addArrow';
 
 
 const DraggableAtkValue = ({ increaseBoxes, boxItems, setBoxItems }) => {
-  const [selectedValues, setSelectedValues] = useState({});
+  const [selectedValues, setSelectedValues] = useState({'filter':'AtkValue',
+                                                        'value':`0<=ATK<=0`,
+                                                        equals: false});
   const [minValue, setMinValue] = useState(0);
   const [maxValue, setMaxValue] = useState(0);
 
