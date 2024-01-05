@@ -13,25 +13,24 @@
 
 .dropped-item {
   border-radius: 0; 
-  background-color: #55379c; /* Set your desired bright color */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
-  z-index: 1;
+  background-color: #513a85; /* Set your desired bright color */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);  
   font-size: 10px;
-  height: 45px;
-  width: 88px;
+  height: 80px;
+  width: 80px;
+  padding: 1px;
 }
 
 .Value{
   font:  15px arial, sans-serif;
   text-shadow:-1px 6px 58px #ffffff;
   color:#ffffff;
-  
 }
 
 .Type{
   color:white;
   font-weight: bold;
-  font-size: 8px;
+  font-size: 6px;
   text-shadow: rgba(255,255,255,1) 0px 0px 5px;
 }
 
