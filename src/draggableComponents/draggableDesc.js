@@ -18,7 +18,8 @@ const DraggableCardDesc = ({ increaseBoxes, boxItems, setBoxItems }) => {
     if (boxItems.length === 1 && !boxItems[0].objectType) {
       const newItem = {
         objectType: 'desc',
-        value: `${selectedDesc}`
+        value: `${selectedDesc}`,
+        equals: equalChecked,
       };
       setBoxItems([newItem]);
     } else {
@@ -26,7 +27,8 @@ const DraggableCardDesc = ({ increaseBoxes, boxItems, setBoxItems }) => {
       // If there are multiple droppable areas or non-empty droppable areas, add to the end
       const newItem = {
         objectType: 'desc',
-        value: `${selectedDesc}`
+        value: `${selectedDesc}`,
+        equals: equalChecked,
       };
 
       // Update the target box state with the new item
