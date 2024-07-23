@@ -1,5 +1,7 @@
 Site is currently using an outdated database for card information and is correct up to the Valient Smashers set, which is included using OCG translation names.
 
+SITE CAN BE ACCESSED AT https://eoinc836.github.io
+
 --HOW TO USE--
 
 To use the site, find the revant filters from the bottom of the screen, adjust them to your specifc needs and then click or drag them
